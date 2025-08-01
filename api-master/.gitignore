@@ -1,0 +1,18 @@
+# FastAPI
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+env/
+.env
+.venv
+venv/
+ENV/
+dist/
+build/
+*.egg-info/
+.eggs/
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
