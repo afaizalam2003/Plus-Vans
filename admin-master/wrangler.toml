@@ -2,26 +2,9 @@ name = "plus-vans-admin"
 compatibility_date = "2024-12-01"
 compatibility_flags = ["nodejs_compat"]
 
-[env.production]
-name = "plus-vans-admin"
-
-[env.staging]
-name = "plus-vans-admin-staging"
-
-# Pages configuration
-pages_build_output_dir = "out"
-
 [build]
-  command = "pnpm build"
-  publish = ".next"
-
-[build.upload]
-  format = "service-worker"
-  main = ".next/static-pages-worker.js"
-
-[[routes]]
-  pattern = "admin/*"
-  script_name = "_worker.js"
+  command = "npm run build:cloudflare"
+  publish = "out"
 
 [site]
-  bucket = ".next"
+  bucket = "out"
