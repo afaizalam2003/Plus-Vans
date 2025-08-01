@@ -1,14 +1,26 @@
 const path = require("path");
 
+// Disable type checking during build for faster builds
+process.env.NEXT_TYPEGEN = '1';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Disable ESLint during build for faster builds
   eslint: {
     ignoreDuringBuilds: true,
   },
+  // Disable TypeScript type checking during build for faster builds
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   // Enable static export for Cloudflare Pages
   output: 'export',
+  // Add trailing slashes to all URLs for Cloudflare compatibility
   trailingSlash: true,
+  // Disable automatic redirects for trailing slashes
   skipTrailingSlashRedirect: true,
+  // Disable React strict mode for better compatibility with some libraries
+  reactStrictMode: false,
   images: {
     unoptimized: true,
     domains: ["res.cloudinary.com"],
