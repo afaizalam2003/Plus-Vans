@@ -1,0 +1,46 @@
+import { User } from './user';
+
+export interface Booking {
+  id: string;
+  customerId: string;
+  customer?: User;
+  vehicleId: string;
+  startDate: Date | string;
+  endDate: Date | string;
+  pickupLocation: string;
+  dropoffLocation: string;
+  status: 'pending' | 'confirmed' | 'in-progress' | 'completed' | 'cancelled';
+  totalPrice: number;
+  currency: string;
+  notes?: string;
+  createdAt: Date | string;
+  updatedAt: Date | string;
+  driverNotes?: string;
+  estimatedDistance?: number;
+  estimatedDuration?: number;
+  actualDistance?: number;
+  actualDuration?: number;
+  vehicleType: string;
+  additionalServices?: string[];
+  paymentStatus: 'pending' | 'paid' | 'partially_paid' | 'refunded' | 'failed';
+  paymentMethod?: string;
+  paymentId?: string;
+  cancellationReason?: string;
+  cancelledAt?: Date | string;
+  completedAt?: Date | string;
+  rating?: number;
+  review?: string;
+  promoCode?: string;
+  discountAmount?: number;
+  taxAmount?: number;
+  serviceFee?: number;
+  basePrice?: number;
+  distancePrice?: number;
+  timePrice?: number;
+  extrasPrice?: number;
+  isRecurring?: boolean;
+  recurrencePattern?: string;
+  parentBookingId?: string;
+  childBookings?: Booking[];
+  metadata?: Record<string, any>;
+}
